@@ -8,7 +8,7 @@ namespace Ex28_Csharp
 {
     public class Menu
     {
-        Database database = new Database();
+        Controller controller = new Controller();
         public void ShowMenu()
         {
             bool exit = false;
@@ -28,23 +28,23 @@ namespace Ex28_Csharp
                 switch (choice)
                 {
                     case "1":
-                        database.InsertPet();
+                        controller.InsertPet();
                         break;
 
                     case "2":
-                        database.ShowAllPets();
+                        controller.ShowAllPets();
                         break;
 
                     case "3":
-                        database.ShowOwnerByLastname();
+                        controller.ShowOwnerByLastname();
                         break;
 
                     case "4":
-                        database.ShowOwnerByEmail();
+                        controller.ShowOwnerByEmail();
                         break;
 
                     case "5":
-                        database.ShowOwnersPets();
+                        controller.ShowOwnersPets();
                         break;
 
                     case "0":

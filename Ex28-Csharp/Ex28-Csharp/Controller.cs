@@ -32,9 +32,10 @@ namespace Ex28_Csharp
             return returnEmail;
         }
 
-        internal void ShowOwnersPets()
+        internal string ShowOwnersPets(int OwnerID)
         {
-            database.ShowOwnersPets();
+            string returnPets = database.ShowOwnersPets(OwnerID);
+            return returnPets;
         }
     }
 }

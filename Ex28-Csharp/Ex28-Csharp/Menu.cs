@@ -45,6 +45,9 @@ namespace Ex28_Csharp
                         int.TryParse(OwnerIDTemp, out int OwnerID);
 
                         controller.InsertPet(PetName, PetType, PetWeight, OwnerID);
+
+                        Console.Write("\nPress any key to exit...");
+                        Console.ReadKey(true);
                         break;
 
                     case "2":
@@ -56,19 +59,31 @@ namespace Ex28_Csharp
                         string OwnerLastname = Console.ReadLine();
                         string Output = controller.ShowOwnerByLastname(OwnerLastname);
                         Console.WriteLine(Output);
-                        Console.ReadLine();
+
+                        Console.Write("\nPress any key to exit...");
+                        Console.ReadKey(true);
                         break;
 
                     case "4":
-                        Console.WriteLine("Owner Email");
+                        Console.WriteLine("Owner Email: ");
                         string OwnerEmail = Console.ReadLine();
                         Output = controller.ShowOwnerByEmail(OwnerEmail);
                         Console.WriteLine(Output);
-                        Console.ReadLine();
+
+                        Console.Write("\nPress any key to exit...");
+                        Console.ReadKey(true);
                         break;
 
                     case "5":
-                        controller.ShowOwnersPets();
+                        Console.WriteLine("Owner ID: ");
+                        OwnerIDTemp = Console.ReadLine();
+                        int.TryParse(OwnerIDTemp, out OwnerID);
+                        Output = controller.ShowOwnersPets(OwnerID);
+                        Console.WriteLine(Output);
+
+                        Console.Write("\nPress any key to exit...");
+                        Console.ReadKey(true);
+                        
                         break;
 
                     case "0":

@@ -11,25 +11,8 @@ namespace Ex28_Csharp
     public class Database
     {
         string connString = "Server=EALSQL1.eal.local;Database=B_DB18_2018;user id=B_STUDENT18;Password=B_OPENDB18;";
-        internal void InsertPet()
+        internal void InsertPet(string PetName, string PetType, decimal PetWeight, int OwnerID)
         {
-
-            Console.WriteLine("Pet Name: ");
-            string PetName = Console.ReadLine();
-
-            Console.WriteLine("Pet Type: ");
-            string PetType = Console.ReadLine();
-
-            Console.WriteLine("Pet Weight: ");
-            string PetWeightTemp = Console.ReadLine();
-
-            decimal.TryParse(PetWeightTemp, out decimal PetWeight);
-
-            Console.WriteLine("Owner ID: ");
-            string OwnerIDTemp = Console.ReadLine();
-
-            int.TryParse(OwnerIDTemp, out int OwnerID);
-
             using (SqlConnection conn = new SqlConnection())
             {
                 conn.ConnectionString = connString;

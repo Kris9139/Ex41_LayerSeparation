@@ -28,7 +28,23 @@ namespace Ex28_Csharp
                 switch (choice)
                 {
                     case "1":
-                        controller.InsertPet();
+                        Console.WriteLine("Pet Name: ");
+                        string PetName = Console.ReadLine();
+
+                        Console.WriteLine("Pet Type: ");
+                        string PetType = Console.ReadLine();
+
+                        Console.WriteLine("Pet Weight: ");
+                        string PetWeightTemp = Console.ReadLine();
+
+                        decimal.TryParse(PetWeightTemp, out decimal PetWeight);
+
+                        Console.WriteLine("Owner ID: ");
+                        string OwnerIDTemp = Console.ReadLine();
+
+                        int.TryParse(OwnerIDTemp, out int OwnerID);
+
+                        controller.InsertPet(PetName, PetType, PetWeight, OwnerID);
                         break;
 
                     case "2":

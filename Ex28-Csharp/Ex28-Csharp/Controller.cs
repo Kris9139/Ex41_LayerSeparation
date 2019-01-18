@@ -26,9 +26,10 @@ namespace Ex28_Csharp
             return returnMe;
         }
 
-        internal void ShowOwnerByEmail()
+        internal string ShowOwnerByEmail(string OwnerEmail)
         {
-            database.ShowOwnerByEmail();
+            string returnEmail = database.ShowOwnerByEmail(OwnerEmail);
+            return returnEmail;
         }
 
         internal void ShowOwnersPets()

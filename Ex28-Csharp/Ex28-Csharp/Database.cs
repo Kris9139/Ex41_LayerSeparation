@@ -65,10 +65,11 @@ namespace Ex28_Csharp
             Console.ReadKey(true);
         }
 
-        internal void ShowOwnerByEmail()
+        internal string ShowOwnerByEmail(string OwnerEmail)
         {
-            Console.WriteLine("Owner Email: ");
-            string OwnerEmail = Console.ReadLine();
+            string returnEmail = "";
+            //Console.WriteLine("Owner Email: ");
+            //string OwnerEmail = Console.ReadLine();
 
             using (SqlConnection conn = new SqlConnection())
             {
@@ -83,15 +84,21 @@ namespace Ex28_Csharp
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        Console.WriteLine("OwnerID\t OwnerLastName\t OwnerFirstName\t OwnerPhone\t OwnerEmail");
+
+                        //Console.WriteLine("OwnerID\t OwnerLastName\t OwnerFirstName\t OwnerPhone\t OwnerEmail");
 
                         while (reader.Read())
                         {
-                            Console.WriteLine("{0}\t {1}\t {2}\t {3}\t {4}",
-                                reader[0].ToString().Replace(" ", string.Empty), reader[1].ToString().Replace(" ", string.Empty), reader[2].ToString().Replace(" ", string.Empty), reader[3].ToString().Replace(" ", string.Empty), reader[4].ToString().Replace(" ", string.Empty));
+                            returnEmail = string.Format("{0}\t {1}\t {2}\t {3}\t {4}",
+                                reader[0].ToString().Replace(" ", string.Empty), 
+                                reader[1].ToString().Replace(" ", string.Empty), 
+                                reader[2].ToString().Replace(" ", string.Empty), 
+                                reader[3].ToString().Replace(" ", string.Empty), 
+                                reader[4].ToString().Replace(" ", string.Empty));
                         }
                     }
                 }
+                return returnEmail;
             }
             Console.WriteLine("\nPress any key too exit...");
             Console.ReadKey(true);

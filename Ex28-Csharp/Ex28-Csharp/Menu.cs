@@ -60,7 +60,11 @@ namespace Ex28_Csharp
                         break;
 
                     case "4":
-                        controller.ShowOwnerByEmail();
+                        Console.WriteLine("Owner Email");
+                        string OwnerEmail = Console.ReadLine();
+                        Output = controller.ShowOwnerByEmail(OwnerEmail);
+                        Console.WriteLine(Output);
+                        Console.ReadLine();
                         break;
 
                     case "5":

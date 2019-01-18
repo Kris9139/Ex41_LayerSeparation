@@ -36,7 +36,11 @@ namespace Ex28_Csharp
                         break;
 
                     case "3":
-                        controller.ShowOwnerByLastname();
+                        Console.WriteLine("Owner Lastname: ");
+                        string OwnerLastname = Console.ReadLine();
+                        string Output = controller.ShowOwnerByLastname(OwnerLastname);
+                        Console.WriteLine(Output);
+                        Console.ReadLine();
                         break;
 
                     case "4":

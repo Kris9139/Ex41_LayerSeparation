@@ -44,7 +44,7 @@ namespace Ex28_Csharp
 
                         int.TryParse(OwnerIDTemp, out int OwnerID);
 
-                        controller.InsertPet(PetName, PetType, PetWeight, OwnerID);
+                        //controller.InsertPet(PetName, PetType, PetWeight, OwnerID);
 
                         Console.Write("\nPress any key to exit...");
                         Console.ReadKey(true);

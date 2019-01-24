@@ -11,7 +11,7 @@ namespace Ex28_Csharp
     public class Database
     {
         string connString = "Server=EALSQL1.eal.local;Database=B_DB18_2018;user id=B_STUDENT18;Password=B_OPENDB18;";
-        internal void InsertPet(string PetName, string PetType, decimal PetWeight, int OwnerID)
+        internal void InsertPet(string PetName, string PetType, string PetBreed, string PetDOB, decimal PetWeight, int OwnerID)
         {
             using (SqlConnection conn = new SqlConnection())
             {
@@ -22,6 +22,8 @@ namespace Ex28_Csharp
 
                     cmd.Parameters.Add("@PetName", SqlDbType.Char).Value = PetName;
                     cmd.Parameters.Add("@PetType", SqlDbType.Char).Value = PetType;
+                    cmd.Parameters.Add("@PetBreed", SqlDbType.Char).Value = PetBreed;
+                    cmd.Parameters.Add("@PetDOB", SqlDbType.Char).Value = PetDOB;
                     cmd.Parameters.Add("@PetWeight", SqlDbType.Float).Value = PetWeight;
                     cmd.Parameters.Add("@OwnerID", SqlDbType.Int).Value = OwnerID;
 
@@ -137,9 +139,9 @@ namespace Ex28_Csharp
 
         }
 
-        internal string ShowAllPets()
+        internal List<string> ShowAllPets()
         {
-            string returnMe = "";
+            List<string> returnMe = new List<string>();
             
             using (SqlConnection conn = new SqlConnection())
             {
@@ -154,14 +156,14 @@ namespace Ex28_Csharp
 
                     while (reader.Read())
                     {
-                        returnMe = string.Format("{0}\t {1}\t {2}\t {3}\t {4}\t {5}",
+                        returnMe.Add( string.Format("{0}\t {1}\t {2}\t {3}\t {4}\t {5}",
                             reader[0].ToString().Replace(" ", 
                             string.Empty), reader[1].ToString().Replace(" ", 
                             string.Empty), reader[2].ToString().Replace(" ", 
                             string.Empty), reader[3].ToString().Replace(" ", 
                             string.Empty), reader[4].ToString().Replace(" ", 
                             string.Empty), reader[5].ToString().Replace(" ", 
-                            string.Empty));
+                            string.Empty)));
                     }
                 }
             }

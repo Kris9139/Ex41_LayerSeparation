@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Ex28_Csharp;
 
 namespace PetGUI
 {
@@ -22,6 +23,19 @@ namespace PetGUI
         public InsertPet()
         {
             InitializeComponent();
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Controller controller = new Controller();
+            controller.InsertPet(Name.Text, Type.Text, Breed.Text, PetDOB.Text, decimal.Parse(Weight.Text), int.Parse(Owner.Text));
         }
     }
 }

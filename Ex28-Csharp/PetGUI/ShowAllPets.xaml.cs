@@ -32,12 +32,40 @@ namespace PetGUI
             gridview.Columns.Add(new GridViewColumn { Header = "Pet weight", DisplayMemberBinding = new Binding("PetWeight") });
             gridview.Columns.Add(new GridViewColumn { Header = "Owner id", DisplayMemberBinding = new Binding("OwnerID") });
 
+            
             Controller controller = new Controller();
-            controller.ShowAllPets();
+
+            foreach (string pet in controller.ShowAllPets())
+            {
+                string[] onePet = pet.Split('\t');
+                string petName = onePet[0];
+                string petType = onePet[1];
+                string petBreed = onePet[2];
+                string petDOB = onePet[3];
+                string petWeight = onePet[4];
+                string ownerID = onePet[5];
+                this.ShowAllPetsLV.Items.Add(new Pet { PetName = petName, PetType = petType, PetBreed = petBreed, PetDOB = petDOB, PetWeight = petWeight, OwnerID = ownerID});
+            }
+
+            // this.ShowAllPetsLV.Items.Add(new )
         }
 
+        public class Pet
+        {
+            public string PetName { get; set; }
+            public string PetType { get; set; }
+            public string PetBreed { get; set; }
+            public string PetDOB { get; set; }
+            public string PetWeight { get; set; }
+            public string OwnerID { get; set; }
 
+        }
 
-        
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

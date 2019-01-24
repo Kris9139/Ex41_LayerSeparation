@@ -15,20 +15,13 @@ using System.Windows.Shapes;
 namespace PetGUI
 {
     /// <summary>
-    /// Interaction logic for InsertOwner.xaml
+    /// Interaction logic for FindOwner.xaml
     /// </summary>
-    public partial class InsertOwner : Window
+    public partial class FindOwner : Window
     {
-        public InsertOwner()
+        public FindOwner()
         {
             InitializeComponent();
-        }
-
-        private void Back_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
         }
     }
 }

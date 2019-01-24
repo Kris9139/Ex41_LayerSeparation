@@ -10,14 +10,16 @@ namespace Ex28_Csharp
     {
         Database database = new Database();
 
-        public void InsertPet(string PetName, string PetType, decimal PetWeight, int OwnerID)
+        public void InsertPet(string PetName, string PetType, string PetBreed, string PetDOB, decimal PetWeight, int OwnerID)
         {
-            database.InsertPet(PetName, PetType, PetWeight, OwnerID);
+            database.InsertPet(PetName, PetType, PetBreed, PetDOB, PetWeight, OwnerID);
         }
 
-        public void ShowAllPets()
+        public List<string> ShowAllPets()
         {
-            database.ShowAllPets();
+
+            return database.ShowAllPets();
+            
         }
 
         public string ShowOwnerByLastname(string lastName)

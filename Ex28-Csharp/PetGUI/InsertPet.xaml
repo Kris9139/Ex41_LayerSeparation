@@ -5,22 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PetGUI"
         mc:Ignorable="d"
-        Title="InsertPet" Height="375.307" Width="396.107">
+        Title="InsertPet" Height="487.807" Width="396.107">
     <Grid Margin="0,0,2,1">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="305*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Insert a pet" FontSize="18" HorizontalAlignment="Left" Margin="139,45,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="189,178,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="189,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="189,222,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="189,135,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Pet name" HorizontalAlignment="Left" Margin="62,94,0,0" VerticalAlignment="Top" Height="26" Width="59"/>
-        <Label Content="Pet type" HorizontalAlignment="Left" Margin="62,131,0,0" VerticalAlignment="Top" Height="26" Width="53"/>
-        <Label Content="Pet weight" HorizontalAlignment="Left" Margin="62,174,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
-        <Label Content="Owner id" HorizontalAlignment="Left" Margin="62,218,0,0" VerticalAlignment="Top" Height="26" Width="58"/>
-        <Button Content="Insert" HorizontalAlignment="Left" Margin="234,262,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
+        <Label Content="Insert a pet" FontSize="18" HorizontalAlignment="Left" Margin="26,45,0,0" VerticalAlignment="Top" Height="34" Width="108" Grid.Column="1"/>
+        <TextBox Name="Weight" HorizontalAlignment="Left" Height="23" Margin="78,266,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBox Name="Name" HorizontalAlignment="Left" Height="23" Margin="78,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBox Name="Owner" HorizontalAlignment="Left" Height="23" Margin="78,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBox Name="Type" HorizontalAlignment="Left" Height="23" Margin="78,135,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Pet name" HorizontalAlignment="Left" Margin="7,94,0,0" VerticalAlignment="Top" Height="26" Width="59" Grid.Column="1"/>
+        <Label Content="Pet type" HorizontalAlignment="Left" Margin="7,135,0,0" VerticalAlignment="Top" Height="26" Width="53" Grid.Column="1"/>
+        <Label Content="Pet weight" HorizontalAlignment="Left" Margin="7,266,0,0" VerticalAlignment="Top" Height="26" Width="66" Grid.Column="1"/>
+        <Label Content="Owner id" HorizontalAlignment="Left" Margin="7,307,0,0" VerticalAlignment="Top" Height="26" Width="58" Grid.Column="1"/>
+        <Button Content="Insert" HorizontalAlignment="Left" Margin="123,350,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="Button_Click" Grid.Column="1"/>
+        <Button x:Name="Back" Content="Back" HorizontalAlignment="Left" Margin="0,392,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click" Grid.Column="1" Height="20"/>
+        <TextBox x:Name="Breed" HorizontalAlignment="Left" Height="23" Margin="78,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Pet breed" HorizontalAlignment="Left" Margin="7,177,0,0" VerticalAlignment="Top" Height="26" Width="66" Grid.Column="1" RenderTransformOrigin="0.326,0.491"/>
+        <TextBox x:Name="PetDOB" HorizontalAlignment="Left" Height="23" Margin="76,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="PetDOB" HorizontalAlignment="Left" Margin="7,221,0,0" VerticalAlignment="Top" Height="26" Width="66" Grid.Column="1"/>
 
     </Grid>
 </Window>

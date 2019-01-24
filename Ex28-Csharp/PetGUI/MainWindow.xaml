@@ -7,11 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="318.135" Width="518.75">
     <Grid Margin="0,0,2,-1">
-        <Button Content="Insert a Pet" HorizontalAlignment="Left" Margin="88,94,0,0" VerticalAlignment="Top" Width="137" Click="Button_Click_1"/>
-        <Button Content="Show all Pets" HorizontalAlignment="Left" Margin="298,94,0,0" VerticalAlignment="Top" Width="137" Click="Button_Click"/>
-        <Button Content="Find owner by Lastname" HorizontalAlignment="Left" Margin="88,170,0,0" VerticalAlignment="Top" Width="137" Click="Button_Click_2"/>
-        <Button Content="Owners Pets" HorizontalAlignment="Left" Margin="298,170,0,0" VerticalAlignment="Top" Width="137" Click="Button_Click_3"/>
-        <Label Content="Pet registration" HorizontalAlignment="Left" Margin="216,23,0,0" VerticalAlignment="Top"/>
+        <Button Content="Insert a Pet" HorizontalAlignment="Left" Margin="194,69,0,0" VerticalAlignment="Top" Width="137" Click="Button_Click_1"/>
+        <Button Content="Insert an owner" HorizontalAlignment="Left" Margin="194,109,0,0" VerticalAlignment="Top" Width="137" Click="Button_Click_4"/>
+        <Button Content="Show all Pets" HorizontalAlignment="Left" Margin="194,148,0,0" VerticalAlignment="Top" Width="137" Click="Button_Click"/>
+        <Button Content="Find owner by Lastname" HorizontalAlignment="Left" Margin="194,187,0,0" VerticalAlignment="Top" Width="137" Click="Button_Click_2"/>
+        <Button Content="Owners Pets" HorizontalAlignment="Left" Margin="194,225,0,0" VerticalAlignment="Top" Width="137" Click="Button_Click_3"/>
+        <Label Content="Pet registration" FontSize="18" HorizontalAlignment="Left" Margin="194,18,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

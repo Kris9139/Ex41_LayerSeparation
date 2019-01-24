@@ -41,12 +41,19 @@ namespace PetGUI
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //FindOwner FindOWner = new FindOwner();
+            FindOwner FindOWner = new FindOwner();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             //OwnersPets ownersPets = new OwnersPets();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            InsertOwner insertOwner = new InsertOwner();
+            insertOwner.Show();
+            this.Close();
         }
     }
 }

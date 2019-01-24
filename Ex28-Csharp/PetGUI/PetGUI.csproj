@@ -55,9 +55,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FindOwner.xaml.cs">
+      <DependentUpon>FindOwner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OwnersPets.xaml.cs">
+      <DependentUpon>OwnersPets.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShowAllPets.xaml.cs">
       <DependentUpon>ShowAllPets.xaml</DependentUpon>
     </Compile>
+    <Page Include="FindOwner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="InsertOwner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -84,6 +94,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OwnersPets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ShowAllPets.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

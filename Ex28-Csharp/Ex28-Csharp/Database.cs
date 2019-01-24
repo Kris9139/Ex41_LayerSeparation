@@ -49,7 +49,7 @@ namespace Ex28_Csharp
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        Console.Clear();
+                        
                         while (reader.Read())
                         {
                             returnPets = string.Format("{0}\t {1}\t {2}\t {3}\t {4}",
@@ -119,7 +119,7 @@ namespace Ex28_Csharp
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
 
-                        Console.Clear();
+                        
                         while (reader.Read())
                         {
                             returnMe = string.Format("{0}\t {1}\t {2}\t {3}\t {4}",
@@ -137,9 +137,10 @@ namespace Ex28_Csharp
 
         }
 
-        internal void ShowAllPets()
+        internal string ShowAllPets()
         {
-            Console.Clear();
+            string returnMe = "";
+            
             using (SqlConnection conn = new SqlConnection())
             {
                 conn.ConnectionString = connString;
@@ -149,11 +150,11 @@ namespace Ex28_Csharp
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    Console.WriteLine("PetName\t PetType\t PetBreed\t PetDOB\t PetWeight\t OwnerID");
+                   
 
                     while (reader.Read())
                     {
-                        Console.WriteLine("{0}\t {1}\t {2}\t {3}\t {4}\t {5}",
+                        returnMe = string.Format("{0}\t {1}\t {2}\t {3}\t {4}\t {5}",
                             reader[0].ToString().Replace(" ", 
                             string.Empty), reader[1].ToString().Replace(" ", 
                             string.Empty), reader[2].ToString().Replace(" ", 
@@ -164,8 +165,7 @@ namespace Ex28_Csharp
                     }
                 }
             }
-            Console.WriteLine("\nPress any key to exit...");
-            Console.ReadKey(true);
+            return returnMe;
         }
     }
 }

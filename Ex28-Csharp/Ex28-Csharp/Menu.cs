@@ -27,8 +27,27 @@ namespace Ex28_Csharp
 
                 switch (choice)
                 {
-                    case "1":                        
-                        controller.InsertPet();
+                    case "1":
+                        Console.WriteLine("Pet Name: ");
+                        string PetName = Console.ReadLine();
+
+                        Console.WriteLine("Pet Type: ");
+                        string PetType = Console.ReadLine();
+
+                        Console.WriteLine("Pet Weight: ");
+                        string PetWeightTemp = Console.ReadLine();
+
+                        decimal.TryParse(PetWeightTemp, out decimal PetWeight);
+
+                        Console.WriteLine("Owner ID: ");
+                        string OwnerIDTemp = Console.ReadLine();
+
+                        int.TryParse(OwnerIDTemp, out int OwnerID);
+
+                        controller.InsertPet(PetName, PetType, PetWeight, OwnerID);
+
+                        Console.Write("\nPress any key to exit...");
+                        Console.ReadKey(true);
                         break;
 
                     case "2":
@@ -40,15 +59,31 @@ namespace Ex28_Csharp
                         string OwnerLastname = Console.ReadLine();
                         string Output = controller.ShowOwnerByLastname(OwnerLastname);
                         Console.WriteLine(Output);
-                        Console.ReadLine();
+
+                        Console.Write("\nPress any key to exit...");
+                        Console.ReadKey(true);
                         break;
 
                     case "4":
-                        controller.ShowOwnerByEmail();
+                        Console.WriteLine("Owner Email: ");
+                        string OwnerEmail = Console.ReadLine();
+                        Output = controller.ShowOwnerByEmail(OwnerEmail);
+                        Console.WriteLine(Output);
+
+                        Console.Write("\nPress any key to exit...");
+                        Console.ReadKey(true);
                         break;
 
                     case "5":
-                        controller.ShowOwnersPets();
+                        Console.WriteLine("Owner ID: ");
+                        OwnerIDTemp = Console.ReadLine();
+                        int.TryParse(OwnerIDTemp, out OwnerID);
+                        Output = controller.ShowOwnersPets(OwnerID);
+                        Console.WriteLine(Output);
+
+                        Console.Write("\nPress any key to exit...");
+                        Console.ReadKey(true);
+                        
                         break;
 
                     case "0":

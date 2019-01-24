@@ -11,25 +11,8 @@ namespace Ex28_Csharp
     public class Database
     {
         string connString = "Server=EALSQL1.eal.local;Database=B_DB18_2018;user id=B_STUDENT18;Password=B_OPENDB18;";
-        internal void InsertPet()
+        internal void InsertPet(string PetName, string PetType, decimal PetWeight, int OwnerID)
         {
-
-            Console.WriteLine("Pet Name: ");
-            string PetName = Console.ReadLine();
-
-            Console.WriteLine("Pet Type: ");
-            string PetType = Console.ReadLine();
-
-            Console.WriteLine("Pet Weight: ");
-            string PetWeightTemp = Console.ReadLine();
-
-            decimal.TryParse(PetWeightTemp, out decimal PetWeight);
-
-            Console.WriteLine("Owner ID: ");
-            string OwnerIDTemp = Console.ReadLine();
-
-            int.TryParse(OwnerIDTemp, out int OwnerID);
-
             using (SqlConnection conn = new SqlConnection())
             {
                 conn.ConnectionString = connString;
@@ -48,11 +31,10 @@ namespace Ex28_Csharp
             }
         }
 
-        internal void ShowOwnersPets()
+        internal string ShowOwnersPets(int OwnerID)
         {
-            Console.WriteLine("Owner ID: ");
-            string OwnerIDTemp = Console.ReadLine();
-            int.TryParse(OwnerIDTemp, out int OwnerID);
+
+            string returnPets = "";
 
             using (SqlConnection conn = new SqlConnection())
             {
@@ -68,24 +50,26 @@ namespace Ex28_Csharp
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         Console.Clear();
-                        Console.WriteLine("OwnerName\t PetName\t PetType\t PetBreed\t AverageLifeExpectancy");
-
                         while (reader.Read())
                         {
-                            Console.WriteLine("{0}\t {1}\t {2}\t {3}\t {4}",
-                                reader[0].ToString().Replace(" ", string.Empty), reader[1].ToString().Replace(" ", string.Empty), reader[2].ToString().Replace(" ", string.Empty), reader[3].ToString().Replace(" ", string.Empty), reader[4].ToString().Replace(" ", string.Empty));
+                            returnPets = string.Format("{0}\t {1}\t {2}\t {3}\t {4}",
+                                reader[0].ToString().Replace(" ", string.Empty), 
+                                reader[1].ToString().Replace(" ", string.Empty), 
+                                reader[2].ToString().Replace(" ", string.Empty), 
+                                reader[3].ToString().Replace(" ", string.Empty), 
+                                reader[4].ToString().Replace(" ", string.Empty));
                         }
                     }
                 }
+                return returnPets;
             }
-            Console.WriteLine("\nPress any key too exit...");
-            Console.ReadKey(true);
+
         }
 
-        internal void ShowOwnerByEmail()
+        internal string ShowOwnerByEmail(string OwnerEmail)
         {
-            Console.WriteLine("Owner Email: ");
-            string OwnerEmail = Console.ReadLine();
+            string returnEmail = "";
+            
 
             using (SqlConnection conn = new SqlConnection())
             {
@@ -100,18 +84,22 @@ namespace Ex28_Csharp
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        Console.WriteLine("OwnerID\t OwnerLastName\t OwnerFirstName\t OwnerPhone\t OwnerEmail");
+
 
                         while (reader.Read())
                         {
-                            Console.WriteLine("{0}\t {1}\t {2}\t {3}\t {4}",
-                                reader[0].ToString().Replace(" ", string.Empty), reader[1].ToString().Replace(" ", string.Empty), reader[2].ToString().Replace(" ", string.Empty), reader[3].ToString().Replace(" ", string.Empty), reader[4].ToString().Replace(" ", string.Empty));
+                            returnEmail = string.Format("{0}\t {1}\t {2}\t {3}\t {4}",
+                                reader[0].ToString().Replace(" ", string.Empty), 
+                                reader[1].ToString().Replace(" ", string.Empty), 
+                                reader[2].ToString().Replace(" ", string.Empty), 
+                                reader[3].ToString().Replace(" ", string.Empty), 
+                                reader[4].ToString().Replace(" ", string.Empty));
                         }
                     }
                 }
+                return returnEmail;
             }
-            Console.WriteLine("\nPress any key too exit...");
-            Console.ReadKey(true);
+
         }
 
         internal string ShowOwnerByLastname(string lastName)
@@ -130,8 +118,8 @@ namespace Ex28_Csharp
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        //string.Format("OwnerID\t OwnerLastName\t OwnerFirstName\t OwnerPhone\t OwnerEmail");
-                        
+
+                        Console.Clear();
                         while (reader.Read())
                         {
                             returnMe = string.Format("{0}\t {1}\t {2}\t {3}\t {4}",
@@ -146,8 +134,6 @@ namespace Ex28_Csharp
                 }
             return returnMe;
             }
-            Console.WriteLine("\nPress any key too exit...");
-            Console.ReadKey(true);
 
         }
 
@@ -172,7 +158,7 @@ namespace Ex28_Csharp
                     }
                 }
             }
-            Console.WriteLine("\nPress any key too exit...");
+            Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey(true);
         }
     }

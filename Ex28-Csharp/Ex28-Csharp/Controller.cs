@@ -10,9 +10,9 @@ namespace Ex28_Csharp
     {
         Database database = new Database();
 
-        internal void InsertPet()
+        internal void InsertPet(string PetName, string PetType, decimal PetWeight, int OwnerID)
         {
-            database.InsertPet();
+            database.InsertPet(PetName, PetType, PetWeight, OwnerID);
         }
 
         internal void ShowAllPets()
@@ -26,14 +26,16 @@ namespace Ex28_Csharp
             return returnMe;
         }
 
-        internal void ShowOwnerByEmail()
+        internal string ShowOwnerByEmail(string OwnerEmail)
         {
-            database.ShowOwnerByEmail();
+            string returnEmail = database.ShowOwnerByEmail(OwnerEmail);
+            return returnEmail;
         }
 
-        internal void ShowOwnersPets()
+        internal string ShowOwnersPets(int OwnerID)
         {
-            database.ShowOwnersPets();
+            string returnPets = database.ShowOwnersPets(OwnerID);
+            return returnPets;
         }
     }
 }

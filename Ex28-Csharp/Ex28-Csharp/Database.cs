@@ -154,7 +154,13 @@ namespace Ex28_Csharp
                     while (reader.Read())
                     {
                         Console.WriteLine("{0}\t {1}\t {2}\t {3}\t {4}\t {5}",
-                            reader[0].ToString().Replace(" ", string.Empty), reader[1].ToString().Replace(" ", string.Empty), reader[2].ToString().Replace(" ", string.Empty), reader[3].ToString().Replace(" ", string.Empty), reader[4].ToString().Replace(" ", string.Empty), reader[5].ToString().Replace(" ", string.Empty));
+                            reader[0].ToString().Replace(" ", 
+                            string.Empty), reader[1].ToString().Replace(" ", 
+                            string.Empty), reader[2].ToString().Replace(" ", 
+                            string.Empty), reader[3].ToString().Replace(" ", 
+                            string.Empty), reader[4].ToString().Replace(" ", 
+                            string.Empty), reader[5].ToString().Replace(" ", 
+                            string.Empty));
                     }
                 }
             }

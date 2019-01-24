@@ -27,7 +27,7 @@ namespace Ex28_Csharp
 
                 switch (choice)
                 {
-                    case "1":
+                    case "1":                        
                         controller.InsertPet();
                         break;
 

@@ -67,5 +67,13 @@ namespace PetGUI
             mainWindow.Show();
             this.Close();
         }
+
+        private void InsertPetDiBo_Click(object sender, RoutedEventArgs e)
+        {
+            InsertPet insertPet = new InsertPet();
+            insertPet.Show();
+
+            InsertPetDiBo.IsEnabled = false;
+        }
     }
 }

@@ -22,7 +22,7 @@
         <Label Content="Pet weight" HorizontalAlignment="Left" Margin="7,266,0,0" VerticalAlignment="Top" Height="26" Width="66" Grid.Column="1"/>
         <Label Content="Owner id" HorizontalAlignment="Left" Margin="7,307,0,0" VerticalAlignment="Top" Height="26" Width="58" Grid.Column="1"/>
         <Button Content="Insert" HorizontalAlignment="Left" Margin="123,350,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="Button_Click" Grid.Column="1"/>
-        <Button x:Name="Back" Content="Back" HorizontalAlignment="Left" Margin="0,392,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click" Grid.Column="1" Height="20"/>
+        <Button x:Name="Back" Content="Close" HorizontalAlignment="Left" Margin="0,392,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click" Grid.Column="1" Height="20"/>
         <TextBox x:Name="Breed" HorizontalAlignment="Left" Height="23" Margin="78,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
         <Label Content="Pet breed" HorizontalAlignment="Left" Margin="7,177,0,0" VerticalAlignment="Top" Height="26" Width="66" Grid.Column="1" RenderTransformOrigin="0.326,0.491"/>
         <TextBox x:Name="PetDOB" HorizontalAlignment="Left" Height="23" Margin="76,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>

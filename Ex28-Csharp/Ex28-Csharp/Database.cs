@@ -8,8 +8,13 @@ using System.Threading.Tasks;
 
 namespace Ex28_Csharp
 {
-    public class Database
+    public class Database : Observer
     {
+        private new void Update()
+        {
+            
+        }
+
         string connString = "Server=EALSQL1.eal.local;Database=B_DB18_2018;user id=B_STUDENT18;Password=B_OPENDB18;";
         internal void InsertPet(string PetName, string PetType, string PetBreed, string PetDOB, decimal PetWeight, int OwnerID)
         {

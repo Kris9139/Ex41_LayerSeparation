@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ex28_Csharp
 {
-    public class Controller
+    public class Controller: Subscriber
     {
         Database database = new Database();
 

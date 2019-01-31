@@ -27,8 +27,6 @@ namespace PetGUI
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
             this.Close();
         }
 
@@ -36,6 +34,7 @@ namespace PetGUI
         {
             Controller controller = new Controller();
             controller.InsertPet(Name.Text, Type.Text, Breed.Text, PetDOB.Text, decimal.Parse(Weight.Text), int.Parse(Owner.Text));
+            controller.Notify();
         }
     }
 }
